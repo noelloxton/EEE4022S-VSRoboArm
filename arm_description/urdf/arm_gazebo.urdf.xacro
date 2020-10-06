@@ -89,6 +89,8 @@
       </plugin>
     </sensor>
   </gazebo>
+  <gazebo reference="target">
+  </gazebo>
 
   
   <link name="dummy_link"/>
@@ -353,6 +355,18 @@
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
   </joint>
 
+  <joint name="target_joint" type="fixed">
+    <parent link="world"/>
+    <child link="target"/>
+    <origin xyz="1.5 1.5 0" rpy="1.5 1.5 0" />
+  </joint>
 
+  <link name="target">
+    <visual>
+      <geometry>
+        <box size="1 1 0.001"/>
+      </geometry>
+    </visual>
+  </link>
  
 </robot>
