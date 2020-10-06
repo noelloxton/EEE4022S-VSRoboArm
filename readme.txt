@@ -37,7 +37,6 @@ ls -a
 
 Then you can enter
 
-./safe_spawner_real.sh
 ./safe_spawner_sim.sh
 
 P.S make sure the python executables also have the permissions (e.g roscd arm_bringup/scripts && chmod +x ...)
