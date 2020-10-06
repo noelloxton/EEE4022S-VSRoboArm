@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  
+
+  <!-- send urdf to param server -->
+  <param name="robot_description" textfile="$(find arm_description)/urdf/arm_real.urdf"/>
+  
+  <!-- Send robot states to tf -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    <param name="publish_frequency" type="double" value="50.0" />
+  </node>
+
+  <!-- load controllers to param server-->
+  <rosparam file="$(find arm_bringup)/config/control/joint_state_controller.yaml" command="load"/>
+  <rosparam file="$(find arm_bringup)/config/control/arm_control.yaml" command="load"/>
+  <!--rosparam file="$(find arm_bringup)/config/control/gripper_position_control.yaml" command="load"/-->
+
+  <rosparam file="$(find arm_bringup)/config/control/hardware_interface.yaml" command="load"/>
+  
+  <!-- start controller manager -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" args="joint_state_controller arm_controller "/> 
+    <!-- add gripper_controller-->
+
+  <!-- start hardware interface node for the arm -->
+  <node name="my_arm_hardware_interface" pkg="my_hardware_interface" type="myrobot_hw_main"
+          output="screen" launch-prefix=""/>
+
+  <!-- Transforms Joint_states to appropiate servo commmands for rosserial -->
+  <!-- Arm is a clone of joint_States - perfect execution -->
+
+  <node name="Pub_to_Arduino_Node" pkg="arm_bringup" type="Pub_to_Arduino_Class" respawn="false" 
+  output="screen"/>
+  
+
+
+  <!-- Start rosserial Arduino node -->
+  <!--node name="serial_node" pkg="rosserial_python" type="serial_node.py" output="screen">
+      <rosparam file="$(find arm_bringup)/config/start/serial_params.yaml" command="load" />
+  </node-->
+  
+
+
+</launch>

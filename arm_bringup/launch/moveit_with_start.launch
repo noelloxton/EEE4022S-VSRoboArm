@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  
+  
+  <!-- Start Moveit-->
+  <include file="$(find arm_bringup)/launch/moveit.launch"/>
+  <!-- set arm at Home position-->
+  <node name="Set_Start_Pose" pkg="arm_bringup" type="set_start_pos.py" respawn="false" 
+  output="screen"/>
+
+
+</launch>

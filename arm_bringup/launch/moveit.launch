@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <!--rosparam command="load" file="$(find my_arm_moveit_config)/config/joint_names.yaml"/-->
+
+  <include file="$(find arm_moveit_config)/launch/planning_context.launch" >
+    <arg name="load_robot_description" value="false" />
+  </include>
+
+  <!--node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="/use_gui" value="false"/>
+    <rosparam param="/source_list">[/joint_states]</rosparam>
+  </node-->
+
+  <include file="$(find arm_moveit_config)/launch/move_group.launch">
+    <arg name="publish_monitored_planning_scene" value="true" />
+    <arg name="allow_trajectory_execution" value="true"/>
+    <arg name="info" value="true"/>
+    <arg name="load_robot_description" value="false" />
+  </include>
+
+  <!--include file="$(find my_arm_moveit_config)/launch/moveit_rviz.launch">
+    <arg name="config" value="true"/>
+  </include-->
+
+</launch>

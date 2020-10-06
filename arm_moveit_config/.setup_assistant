@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: arm_description
+    relative_path: urdf/arm_real.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/arm.srdf
+  CONFIG:
+    author_name: "Matt Markey\n\t"
+    author_email: matmarky@hotmail.com
+    generated_timestamp: 1591125854

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+
+
+  <!-- Start rosserial Arduino node -->
+  <node name="serial_node" pkg="rosserial_python" type="serial_node.py" output="screen">
+      <rosparam file="$(find arm_bringup)/config/start/serial_params.yaml" command="load" />
+  </node>
+  
+
+
+</launch>

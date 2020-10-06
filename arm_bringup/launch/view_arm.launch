@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- send urdf to param server -->
+  <param name="robot_description" textfile="$(find arm_description)/urdf/arm_real.urdf"/>
+
+  <!-- Joint states Gui-->
+  <node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+
+  <!-- Send robot states to tf -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <!-- Launch RViz with Custom Config-->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find arm_bringup)/config/rviz/view_arm.rviz" required="true" />
+
+</launch>
