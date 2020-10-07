@@ -93,6 +93,14 @@
   </gazebo>
 
   
+  <material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+
   <link name="dummy_link"/>
    <!--Dummy Link-->
   <joint name="dummy_joint" type="fixed">
@@ -358,15 +366,21 @@
   <joint name="target_joint" type="fixed">
     <parent link="world"/>
     <child link="target"/>
-    <origin xyz="1.5 1.5 0" rpy="1.5 1.5 0" />
+    <origin xyz="1 0 0.25" rpy="0 1.571 0" />
   </joint>
 
   <link name="target">
     <visual>
       <geometry>
-        <box size="1 1 0.001"/>
+        <box size="0.25 0.25 0.00001"/>
       </geometry>
+      <material name="blue"/>
     </visual>
+    <inertial>
+      <mass value="1" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
   </link>
  
 </robot>
