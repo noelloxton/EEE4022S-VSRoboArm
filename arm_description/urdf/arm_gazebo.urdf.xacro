@@ -90,6 +90,7 @@
     </sensor>
   </gazebo>
   <gazebo reference="target">
+    <material>Gazebo/Blue</material>
   </gazebo>
 
   
