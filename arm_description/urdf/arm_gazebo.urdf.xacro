@@ -89,18 +89,6 @@
       </plugin>
     </sensor>
   </gazebo>
-  <gazebo reference="target">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-
-  
-  <material name="blue">
-    <color rgba="0 0 0.8 1"/>
-  </material>
-
-  <material name="white">
-    <color rgba="1 1 1 1"/>
-  </material>
 
   <link name="dummy_link"/>
    <!--Dummy Link-->
@@ -364,24 +352,4 @@
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
   </joint>
 
-  <joint name="target_joint" type="fixed">
-    <parent link="world"/>
-    <child link="target"/>
-    <origin xyz="1 0 0.25" rpy="0 1.571 0" />
-  </joint>
-
-  <link name="target">
-    <visual>
-      <geometry>
-        <box size="0.25 0.25 0.00001"/>
-      </geometry>
-      <material name="blue"/>
-    </visual>
-    <inertial>
-      <mass value="1" />
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-    </inertial>
-  </link>
- 
 </robot>
