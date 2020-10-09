@@ -1,0 +1,15 @@
+material target/Diffuse
+{
+    receive_shadows off
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture qr_code.png
+                scale 1 1
+            }
+        }   
+    }
+}
