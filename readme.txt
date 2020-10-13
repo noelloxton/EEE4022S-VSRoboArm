@@ -1,4 +1,13 @@
-TO COMPILE:
+PROJECT NAME: Visual Servoing of a Simulated Robot Arm
+
+DESCRIPTION: This project involves implementing a visual sensor on a robot arm simulation in order for the arm to learn different poses using a Convolutional neural network (CNN) using tensorflow. All robot simulations were done using Gazebo and the Robot Operating System (ROS)
+
+Installation:
+
+NOTE: This program requires a linux machine running Ubuntu 18.04 'Bionic Beaver' - newer versions will not work since MOVEIT requires this older version of Ubuntu at the time of writing this...
+
+1) Install ROS Melodic - http://wiki.ros.org/melodic/Installation/Ubuntu
+2)
 
 1. mkdir catkin_ws
 2. cd catkin_ws
