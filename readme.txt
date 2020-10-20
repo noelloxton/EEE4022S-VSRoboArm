@@ -23,14 +23,17 @@ ROS/GAZEBO
         "cd src"
         5. clone this github source code
         "github clone git@github.com:noelloxton/EEE4022S-VSRoboArm.git"
+        
+        6. Go up a level to the main workspace directory once cloning is complete
+        "cd .."
     
-        6. To include depdencies:
+        7. To include depdencies:
         "rosdep install --from-paths src --ignore-src -r -y"
 
-        6.a. You may want to run just to be sure:
+        7.a. You may want to run just to be sure:
         "sudo apt-get install ros-melodic-ros-control ros-melodic-ros-controllers"
 
-        7. Build the catkin workspace and source the setup file (NOTE: You can add the source command to automatically run on the startup of your bash terminal otherwise make
+        8. Build the catkin workspace and source the setup file (NOTE: You can add the source command to automatically run on the startup of your bash terminal otherwise make
         sure to always run this command on a new terminal)
         "catkin_make && source devel/setup.bash"
 
