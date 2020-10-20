@@ -10,7 +10,8 @@ ROS/GAZEBO
     time of writing this...
 
     1) Install ROS Melodic - http://wiki.ros.org/melodic/Installation/Ubuntu
-    2) Download and install the robot arm using the following set of instructions (These are taken from Matthew Markey's source code https://github.com/matthewmarkey44/eee4022f)
+    2) Install MOVEIT for ROS melodic - http://docs.ros.org/en/melodic/api/moveit_tutorials/html/doc/getting_started/getting_started.html
+    3) Download and install the robot arm using the following set of instructions (These are taken from Matthew Markey's source code https://github.com/matthewmarkey44/eee4022f)
 
         1. Make a custom directory for your workspace
         "mkdir <your_workspace_name>"
