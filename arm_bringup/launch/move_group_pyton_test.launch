@@ -1,0 +1,5 @@
+<launch>
+
+	<node name="move_group_python_test" pkg="arm_bringup" type="move_group_python_test.py" respawn="false" output="screen">
+
+</launch>
